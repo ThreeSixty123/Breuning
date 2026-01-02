@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breuning.de</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    :root{
+      --bg-light:#FFF8F0;
+      --bg-section:#FFEBD6;
+      --text-main:#4B4237;
+      --accent:#D97706;
+      --accent-light:#F59E0B;
+
+      --bg-dark:#1a1a1a;
+      --bg-dark-alt:#2a2a2a;
+      --text-dark-main:#E5E5E5;
+      --text-dark-secondary:#B0B0B0;
+    }
+
+    body{ background:var(--bg-light); color:var(--text-main); transition:.5s; }
+    body.dark{ background:var(--bg-dark); color:var(--text-dark-main); }
+
+    .hero-bg{
+      background:linear-gradient(rgba(255,255,255,.7),rgba(255,235,210,.7)),
+      url("https://images.unsplash.com/photo-1603415526960-f4e1a3c0f49d?q=80&w=1600&auto=format")
+      center/cover no-repeat;
+    }
+
+    section:nth-of-type(odd){background:var(--bg-section);}
+    section:nth-of-type(even){background:var(--bg-light);}
+    body.dark section:nth-of-type(odd){background:var(--bg-dark-alt);}
+    body.dark section:nth-of-type(even){background:var(--bg-dark);}
+
+    .overlay-light{background:rgba(255,255,255,.7);}
+    .overlay-dark{background:rgba(0,0,0,.55);}
+
+    .fade-in{opacity:0;transform:translateY(30px);transition:.8s;}
+    .fade-in.show{opacity:1;transform:translateY(0);}
+
+    nav a.active{font-weight:600;}
+    nav a{color:var(--accent);}
+    nav a:hover{color:var(--accent-light);}
+
+    body.dark nav a{color:var(--text-dark-main);}
+    body.dark nav a:hover{color:var(--accent-light);}
+
+    .nav-button{
+      color:var(--accent);
+      border:1px solid var(--accent);
+      border-radius:8px;
+      padding:2px 8px;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .nav-button:hover{
+      color:var(--accent-light);
+      border-color:var(--accent-light);
+    }
+    body.dark .nav-button{
+      color:var(--text-dark-main);
+      border-color:var(--text-dark-main);
+    }
+    body.dark .nav-button:hover{
+      color:var(--accent-light);
+      border-color:var(--accent-light);
+    }
+
+    .about-card, .skill-card, .project-card{
+      background:#FFFFFF;
+      border-radius:16px;
+      padding:20px 22px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+      border:1px solid rgba(217,119,6,.25);
+      transition:.25s;
+    }
+    .about-card:hover, .skill-card:hover, .project-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 16px 36px rgba(217,119,6,.25);
+    }
+    body.dark .about-card, body.dark .skill-card, body.dark .project-card{
+      background:#1f1f1f;
+      border:1px solid rgba(229,229,229,.25);
+      box-shadow:0 10px 26px rgba(0,0,0,.45);
+    }
+
+    .card-icon{
+      width:32px;
+      height:32px;
+      fill:var(--accent);
+      flex-shrink:0;
+    }
+    body.dark .card-icon{ fill:var(--accent-light); }
+
+    .project-image{
+      border-radius:14px;
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      margin-bottom:12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full shadow-md z-50 bg-white/80 dark:bg-black/70 backdrop-blur">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <span class="text-xl font-bold" style="color:var(--accent)">Breuning.de</span>
+      <ul class="flex space-x-6 items-center">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projekte</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><span id="darkModeToggle" class="nav-button">Dark Mode</span></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-6">
+    <div class="overlay-light dark:overlay-dark p-8 rounded-xl shadow-xl fade-in max-w-3xl">
+      <img src="portrait.jpg" alt="Profilfoto von Richard"
+           class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4"
+           style="border-color:var(--accent)" />
+
+      <h1 class="text-5xl font-bold mb-4" style="color:var(--accent)">Hey, ich bin Richard</h1>
+      <p class="text-xl">
+        „Mut heißt nicht, keine Angst zu haben, sondern trotzdem den ersten Schritt zu machen.“
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="min-h-screen flex flex-col justify-center items-center p-8 fade-in">
+    <h2 class="text-4xl font-semibold mb-8" style="color:var(--accent)">Über mich</h2>
+
+    <div class="max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="about-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg>
+          <h3 class="text-2xl font-semibold" style="color:var(--accent)">Beschreibung / Profil</h3>
+        </div>
+        <p>
+          Ich bin ein warmherziger, verlässlicher und gemeinschaftsorientierter Mensch,
+          der Verantwortung übernimmt und ein Umfeld schafft, in dem sich Menschen
+          gesehen, unterstützt und wertgeschätzt fühlen.
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-1">
+          <li><strong>Stärken:</strong> Hilfsbereitschaft, Loyalität, soziale Verbundenheit.</li>
+          <li><strong>Schwächen:</strong> Anerkennungsbedarf, Kritikempfindlichkeit, Perfektionismus.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M10 2h4l1 2h5v2H4V4h5l1-2zm-6 6h16l-1 12H5L4 8zm6 3v6h2v-6h-2zm4 0v6h2v-6h-2z"/></svg>
+          <h3 class="text-2xl font-semibold" style="color:var(--accent)">Berufliche Laufbahn</h3>
+        </div>
+        <p>
+          Ich arbeite strukturiert, verantwortungsbewusst und teamorientiert und
+          fühle mich in Rollen wohl, in denen ich Prozesse organisiere und
+          Zusammenarbeit stärke.
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-1">
+          <li><strong>Stärken:</strong> Organisation, Kommunikation, Zuverlässigkeit.</li>
+          <li><strong>Schwächen:</strong> Konfliktvermeidung, Zurückhaltung bei Eigenwerbung.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9h2a7 7 0 1 1 7 7v-3l-5 4 5 4v-3a9 9 0 0 0 0-18z"/></svg>
+          <h3 class="text-2xl font-semibold" style="color:var(--accent)">Persönliche Entwicklung</h3>
+        </div>
+        <p>
+          Ich arbeite daran, Grenzen bewusst zu setzen, Selbstvertrauen zu stärken
+          und Veränderungen als Chance für persönliches Wachstum zu nutzen.
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-1">
+          <li><strong>Stärken:</strong> Reflexionsfähigkeit, Verlässlichkeit.</li>
+          <li><strong>Schwächen:</strong> Überforderungstendenz, Festhalten an Vertrautem.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 0-9 3c0 5 9 11 9 11s9-6 9-11a5 5 0 0 0-9-3z"/></svg>
+          <h3 class="text-2xl font-semibold" style="color:var(--accent)">Beziehungen</h3>
+        </div>
+        <p>
+          Beziehungen bedeuten für mich Nähe, Loyalität und gegenseitige Unterstützung —
+          mit Fokus auf Vertrauen, Respekt und Verlässlichkeit.
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-1">
+          <li><strong>Stärken:</strong> Empathie, Fürsorge, Bindungsfähigkeit.</li>
+          <li><strong>Schwächen:</strong> Over-Commitment, Harmoniebedürfnis.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="min-h-screen flex flex-col justify-center items-center p-8 fade-in">
+    <h2 class="text-4xl font-semibold mb-8" style="color:var(--accent)">Meine Skills</h2>
+
+    <h3 class="text-2xl font-semibold mb-4" style="color:var(--accent)">Kernkompetenzen & Stärken</h3>
+
+    <div class="max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 0-5 5c0 5 5 9 5 9s5-4 5-9a5 5 0 0 0-5-5z"/></svg>
+          <strong>Soziale Vermittlung</strong>
+        </div>
+        Harmonie fördern, Beziehungen stärken, Teamarbeit unterstützen.
+      </div>
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M4 4h16v4H4V4zm0 6h10v4H4v-4zm0 6h16v4H4v-4z"/></svg>
+          <strong>Zuverlässige Organisation</strong>
+        </div>
+        Struktur, Planung, Verantwortungsbewusstsein.
+      </div>
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5z"/></svg>
+          <strong>Empathische Unterstützung</strong>
+        </div>
+        Bedürfnisse erkennen und pragmatisch handeln.
+      </div>
+
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-4" style="color:var(--accent)">Entwicklungsfelder</h3>
+
+    <div class="max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2l4 8H8l4-8z"/></svg>
+          <strong>Offenheit für Neues</strong>
+        </div>
+        Routinen hinterfragen, Chancen nutzen.
+      </div>
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1-7.1 2.9z"/></svg>
+          <strong>Kritik souverän annehmen</strong>
+        </div>
+        Feedback als Entwicklung verstehen.
+      </div>
+
+      <div class="skill-card">
+        <div class="flex items-center gap-3 mb-1">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9-9 9z"/></svg>
+          <strong>Selbstbewusste Position</strong>
+        </div>
+        Entscheidungen klar vertreten.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="min-h-screen flex flex-col justify-center items-center p-8 fade-in">
+    <h2 class="text-4xl font-semibold mb-8" style="color:var(--accent)">Projekte</h2>
+
+    <div class="max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="project-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M3 13l2-5h14l2 5v6h-2v-2H5v2H3v-6z"/></svg>
+          <strong>Car — BMW F31</strong>
+        </div>
+        <img src="Car.jpg" alt="BMW F31 Projekt" class="project-image" />
+        <p>
+          Ich kümmere mich gern um mein Auto, pflege es regelmäßig und individualisiere es mit Liebe zum Detail. 
+		  Technik verstehe ich nicht nur, ich schätze sie — genauso wie eine saubere Ästhetik und ein stimmiges Gesamtbild.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+          <strong>AI — Creative Vision</strong>
+        </div>
+        <img src="Eye.jpg" alt="Kreatives KI Bild Auge Universum" class="project-image" />
+        <p>
+          Ich arbeite gern mit KI, weil sie neue Ideen und Möglichkeiten eröffnet. 
+		  Mich reizt es, ihre Grenzen auszutesten und herauszufinden, was heute schon machbar ist.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="flex items-center gap-3 mb-2">
+          <svg class="card-icon" viewBox="0 0 24 24"><path d="M5 16a4 4 0 1 1 3.9-5h2.2l-1.1-2H8V7h4l3 6"/></svg>
+          <strong>Bike — Mountainbike</strong>
+        </div>
+        <img src="Bike.jpg" alt="Mountainbike Projekt" class="project-image" />
+        <p>
+          Ich war schon immer gern mit dem Mountainbike unterwegs und habe mein Bike kürzlich wieder auf Vordermann gebracht. 
+		  Jetzt freue ich mich auf den Frühling, um endlich wieder loszufahren — am liebsten auch Downhill.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+<section id="contact" class="min-h-screen flex flex-col justify-center items-center p-8 fade-in">
+  <h2 class="text-4xl font-semibold mb-6" style="color:var(--accent)">Kontakt</h2>
+
+  <a
+    href="https://www.linkedin.com/in/richard-breunig-829b70b0/?originalSubdomain=de"
+    target="_blank"
+    rel="noopener"
+    class="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-lg font-semibold
+           border border-amber-600 bg-white shadow-md
+           hover:bg-amber-500 hover:text-white hover:shadow-xl transition
+           dark:bg-[#1f1f1f] dark:border-gray-300 dark:hover:bg-amber-500">
+
+    <!-- Icon -->
+    <svg class="w-6 h-6 fill-current"
+         viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.9 0 4.6 2.6 4.6 5.9V24h-4v-7.6c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.7h-4V8z"/>
+    </svg>
+
+    <span>Zu meinem LinkedIn-Profil</span>
+  </a>
+</section>
+
+
+  <footer class="text-center p-4">
+    &copy; 2026 Breuning.de — Alle Rechte vorbehalten.
+  </footer>
+
+  <script>
+    document.getElementById("darkModeToggle").onclick =
+      () => document.body.classList.toggle("dark");
+
+    const faders=document.querySelectorAll(".fade-in");
+    const observer=new IntersectionObserver(e=>{
+      e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add("show");});
+    },{threshold:.2});
+    faders.forEach(el=>observer.observe(el));
+
+    const sections=document.querySelectorAll("section");
+    const navLinks=document.querySelectorAll("nav a");
+    window.addEventListener("scroll",()=>{
+      let current="";
+      sections.forEach(s=>{ if(pageYOffset>=s.offsetTop-120) current=s.id; });
+      navLinks.forEach(l=>l.classList.toggle("active",l.href.includes(current)));
+    });
+  </script>
+
+</body>
+</html>
