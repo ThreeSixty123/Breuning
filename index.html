@@ -25,6 +25,7 @@
 
 <!-- ================= NAVIGATION ================= -->
 <nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
     <!-- Logo -->
@@ -32,7 +33,7 @@
       Richard Breuning
     </span>
 
-    <!-- Desktop Navigation -->
+    <!-- ================= DESKTOP NAV (UNVERÄNDERT) ================= -->
     <ul class="hidden md:flex gap-8 items-center">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">Über mich</a></li>
@@ -42,83 +43,72 @@
       <li><button id="darkToggle" class="nav-button">Dark</button></li>
     </ul>
 
-    <!-- Mobile Buttons -->
-<!-- Mobile Controls -->
-<div class="md:hidden flex items-center gap-3">
+    <!-- ================= MOBILE CONTROLS ================= -->
+    <div class="md:hidden flex items-center gap-3">
 
-  <!-- Dark Mode Toggle (Icon) -->
-  <button id="darkToggleMobile"
-          aria-label="Dark Mode umschalten"
-          class="p-2 rounded-full border border-[var(--border-soft)]">
-    🌙
-  </button>
+      <!-- Dark / Light Toggle -->
+      <button
+        id="darkToggleMobile"
+        aria-label="Dark Mode umschalten"
+        class="p-2 rounded-full border border-[var(--border-soft)] text-lg">
+        🌙
+      </button>
 
-  <!-- Burger -->
-  <button id="menuToggle"
-          aria-label="Menü öffnen"
-          class="p-2 rounded-full border border-[var(--border-soft)]">
-    ☰
-  </button>
+      <!-- Burger -->
+      <button
+        id="menuToggle"
+        aria-label="Menü öffnen"
+        class="p-2 rounded-full border border-[var(--border-soft)] text-xl">
+        ☰
+      </button>
 
-</div>
-
+    </div>
 
   </div>
 
-  <!-- Mobile Menu -->
-<div
-  id="mobileMenu"
-  class="hidden md:hidden fixed inset-0 z-50
-         bg-black/95 backdrop-blur
-         text-white px-6 pt-8">
+  <!-- ================= MOBILE MENU (IMMER SCHWARZ) ================= -->
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden fixed inset-0 z-50
+           bg-black/95 backdrop-blur
+           text-white px-6 pt-8">
 
+    <!-- Close -->
+    <div class="flex justify-end mb-10">
+      <button id="menuClose" aria-label="Menü schließen" class="text-2xl text-white">
+        ✕
+      </button>
+    </div>
 
-  <!-- Close -->
-  <div class="flex justify-end mb-8">
-    <button id="menuClose" class="text-2xl">✕</button>
+    <!-- Navigation -->
+    <ul class="flex flex-col gap-6 text-lg">
+      <li><a href="index.html" class="text-white active">Home</a></li>
+      <li><a href="about.html" class="text-white">Über mich</a></li>
+      <li><a href="skills.html" class="text-white">Skills</a></li>
+      <li><a href="projects.html" class="text-white">Projekte</a></li>
+      <li><a href="contact.html" class="text-white">Kontakt</a></li>
+    </ul>
+
+    <hr class="my-10 opacity-30 border-white/30">
+
+    <!-- Dark Mode Toggle im Menü -->
+    <button
+      id="darkToggleMobileMenu"
+      class="flex items-center gap-3 text-lg text-white">
+      🌙 <span>Dark Mode</span>
+    </button>
+
   </div>
-
-  <!-- Navigation -->
-  <ul class="flex flex-col gap-6 text-lg">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">Über mich</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projekte</a></li>
-    <li><a href="contact.html">Kontakt</a></li>
-  </ul>
-
-  <!-- Divider -->
-  <hr class="my-8 opacity-30">
-
-  <!-- Dark Mode (sichtbar & klar) -->
-  <button id="darkToggleMobileMenu"
-          class="flex items-center gap-3">
-    🌙 <span>Dark Mode</span>
-  </button>
-
-</div>
 
 </nav>
 
+<!-- ================= MAIN ================= -->
 <main class="pt-32">
 
-<!-- ================= HERO ================= -->
-<section class="py-20 md:py-24 fade-in">
-  <div class="max-w-6xl mx-auto px-6 text-center">
+  <!-- ================= HERO ================= -->
+  <section class="py-20 md:py-24 fade-in text-center">
+    <div class="max-w-6xl mx-auto px-6">
 
-    <!-- Portrait -->
-    <div class="flex justify-center mb-10 md:mb-14">
-      <img
-        src="assets/images/portrait.jpg"
-        alt="Porträt Richard Breuning"
-        class="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96
-               rounded-full object-cover shadow-lg
-               ring-1 ring-gray-300 dark:ring-gray-600"
-      />
-    </div>
-
-    <!-- Text -->
-    <div class="mx-auto max-w-3xl">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6">
         Struktur, Technikverständnis  
         <br>und ein Blick fürs Detail
@@ -129,85 +119,13 @@
         und moderne digitale Möglichkeiten.
       </p>
 
-      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-        <a href="projects.html" class="nav-button">
-          Projekte ansehen
-        </a>
-        <a href="contact.html" class="nav-button">
-          Kontakt aufnehmen
-        </a>
+      <div class="flex justify-center gap-6">
+        <a href="projects.html" class="nav-button">Projekte ansehen</a>
+        <a href="contact.html" class="nav-button">Kontakt aufnehmen</a>
       </div>
+
     </div>
-
-  </div>
-</section>
-
-<!-- ================= FEATURE CARDS ================= -->
-<section class="py-20 md:py-24 fade-in">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-3">Technisches Verständnis</h3>
-      <p>
-        Analytisches Denken, strukturierte Arbeitsweise
-        und ein sicherer Umgang mit digitalen Systemen.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-3">Gestaltung & Ästhetik</h3>
-      <p>
-        Klare Linien, ruhige Designs und ein ausgeprägtes
-        Gespür für Details und Wirkung.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-3">Moderne Technologien</h3>
-      <p>
-        Offen für neue Tools und KI-gestützte Lösungen
-        mit Fokus auf sinnvolle Anwendung.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CONTENT ================= -->
-<section class="py-20 md:py-24 bg-[var(--bg-section)] fade-in">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center text-center md:text-left">
-
-    <div>
-      <h2 class="text-3xl font-semibold mb-6">
-        Persönlich. Strukturiert. Verlässlich.
-      </h2>
-      <p>
-        Klare Prozesse, verantwortungsbewusstes Handeln
-        und eine Arbeitsweise, die Vertrauen schafft
-        und nachhaltig Ergebnisse liefert.
-      </p>
-    </div>
-
-    <div class="card">
-      <ul class="space-y-4">
-        <li>✔ Verantwortungsbewusstes Arbeiten</li>
-        <li>✔ Technisches & analytisches Denken</li>
-        <li>✔ Hoher Qualitätsanspruch</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="py-20 md:py-24 text-center fade-in">
-  <h2 class="text-3xl font-semibold mb-6">
-    Interesse an einem Austausch?
-  </h2>
-  <a href="contact.html" class="nav-button">
-    Jetzt Kontakt aufnehmen
-  </a>
-</section>
+  </section>
 
 </main>
 
@@ -221,6 +139,3 @@
 
 </body>
 </html>
-
-
-
