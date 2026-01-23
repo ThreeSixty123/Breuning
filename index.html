@@ -43,17 +43,25 @@
     </ul>
 
     <!-- Mobile Buttons -->
-    <div class="md:hidden flex items-center gap-4">
-      <button id="darkToggleMobile" class="nav-button">Dark</button>
+<!-- Mobile Controls -->
+<div class="md:hidden flex items-center gap-3">
 
-      <button id="menuToggle" aria-label="Menü öffnen">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
+  <!-- Dark Mode Toggle (Icon) -->
+  <button id="darkToggleMobile"
+          aria-label="Dark Mode umschalten"
+          class="p-2 rounded-full border border-[var(--border-soft)]">
+    🌙
+  </button>
+
+  <!-- Burger -->
+  <button id="menuToggle"
+          aria-label="Menü öffnen"
+          class="p-2 rounded-full border border-[var(--border-soft)]">
+    ☰
+  </button>
+
+</div>
+
 
   </div>
 
@@ -191,3 +199,4 @@
 
 </body>
 </html>
+
