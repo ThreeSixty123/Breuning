@@ -15,108 +15,145 @@
 <body>
 
 <!-- ================= NAVIGATION ================= -->
-<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
     <span class="font-semibold tracking-wide">Richard Breuning</span>
-    <ul class="flex gap-8 items-center">
+
+    <!-- ================= DESKTOP NAV ================= -->
+    <ul class="hidden md:flex gap-8 items-center">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Über mich</a></li>
+      <li><a href="about.html" class="active">Über mich</a></li>
       <li><a href="skills.html">Skills</a></li>
       <li><a href="projects.html">Projekte</a></li>
       <li><a href="contact.html">Kontakt</a></li>
       <li><button id="darkToggle" class="nav-button">Dark</button></li>
     </ul>
+
+    <!-- ================= MOBILE CONTROLS ================= -->
+    <div class="md:hidden flex items-center gap-3">
+      <button id="darkToggleMobile" class="p-2 text-lg">🌙</button>
+      <button id="menuToggle" class="p-2 text-xl">☰</button>
+    </div>
+
   </div>
 </nav>
 
+<!-- ================= MOBILE MENU (GLEICH WIE INDEX) ================= -->
+<div
+  id="mobileMenu"
+  class="hidden fixed inset-0 z-[9999]
+         bg-black text-white
+         px-6 pt-8">
+
+  <!-- Close -->
+  <div class="flex justify-end mb-10">
+    <button id="menuClose" class="text-2xl text-white">✕</button>
+  </div>
+
+  <!-- Navigation -->
+  <ul class="flex flex-col gap-6 text-xl font-medium">
+    <li><a href="index.html" class="text-white">Home</a></li>
+    <li><a href="about.html" class="text-white">Über mich</a></li>
+    <li><a href="skills.html" class="text-white">Skills</a></li>
+    <li><a href="projects.html" class="text-white">Projekte</a></li>
+    <li><a href="contact.html" class="text-white">Kontakt</a></li>
+  </ul>
+
+  <hr class="my-10 border-white/30">
+
+  <button
+    id="darkToggleMobileMenu"
+    class="flex items-center gap-3 text-lg text-white">
+    🌙 <span>Dark Mode</span>
+  </button>
+</div>
+
+<!-- ================= MAIN ================= -->
 <main class="pt-32">
 
-<!-- ================= HERO / INTRO ================= -->
-<section class="hero-bg py-28 fade-in">
-  <div class="max-w-6xl mx-auto px-6">
+  <!-- ================= HERO / INTRO ================= -->
+  <section class="hero-bg py-28 fade-in">
+    <div class="max-w-6xl mx-auto px-6">
 
-    <h1 class="text-4xl md:text-5xl font-semibold mb-10 heading">
-      <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      Über mich
-    </h1>
+      <h1 class="text-4xl md:text-5xl font-semibold mb-10 heading">
+        <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        Über mich
+      </h1>
 
-    <p class="max-w-3xl text-lg">
-      Strukturiertes Denken, technisches Verständnis und eine
-      verlässliche, verantwortungsbewusste Arbeitsweise bilden
-      die Grundlage meines beruflichen Handelns.
-    </p>
-
-  </div>
-</section>
-
-<!-- ================= CONTENT ================= -->
-<section class="py-24">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 fade-in">
-
-    <!-- Berufliches Profil -->
-    <div class="card">
-      <h2 class="text-2xl font-semibold mb-4">
-        Berufliches Profil
-      </h2>
-      <p>
-        Ich arbeite strukturiert, verantwortungsbewusst und
-        lösungsorientiert. Mein Fokus liegt auf klaren Prozessen,
-        zuverlässiger Umsetzung und einer Arbeitsweise, die
-        Vertrauen schafft und Ergebnisse liefert.
+      <p class="max-w-3xl text-lg">
+        Strukturiertes Denken, technisches Verständnis und eine
+        verlässliche, verantwortungsbewusste Arbeitsweise bilden
+        die Grundlage meines beruflichen Handelns.
       </p>
+
     </div>
+  </section>
 
-    <!-- Stärken -->
-    <div class="card">
-      <h2 class="text-2xl font-semibold mb-4">
-        Stärken
-      </h2>
-      <ul class="space-y-2">
-        <li>Analytisches und strukturiertes Denken</li>
-        <li>Hohe Zuverlässigkeit und Verantwortungsbewusstsein</li>
-        <li>Klare, sachliche Kommunikation</li>
-      </ul>
+  <!-- ================= CONTENT ================= -->
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 fade-in">
+
+      <div class="card">
+        <h2 class="text-2xl font-semibold mb-4">
+          Berufliches Profil
+        </h2>
+        <p>
+          Ich arbeite strukturiert, verantwortungsbewusst und
+          lösungsorientiert. Mein Fokus liegt auf klaren Prozessen,
+          zuverlässiger Umsetzung und einer Arbeitsweise, die
+          Vertrauen schafft und Ergebnisse liefert.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="text-2xl font-semibold mb-4">
+          Stärken
+        </h2>
+        <ul class="space-y-2">
+          <li>Analytisches und strukturiertes Denken</li>
+          <li>Hohe Zuverlässigkeit und Verantwortungsbewusstsein</li>
+          <li>Klare, sachliche Kommunikation</li>
+        </ul>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ================= BERUFLICHER KONTEXT ================= -->
+  <section class="py-24 bg-[var(--bg-section)] fade-in">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
-<!-- ================= BERUFLICHER KONTEXT ================= -->
-<section class="py-24 bg-[var(--bg-section)] fade-in">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <div class="card">
+        <h2 class="text-2xl font-semibold mb-4">
+          Berufliche Laufbahn
+        </h2>
+        <p>
+          Ich bewege mich sicher in strukturierten Arbeitsumgebungen
+          und übernehme Verantwortung für Organisation, Koordination
+          und nachhaltige Prozessverbesserung.
+        </p>
+        <p class="mt-4">
+          Mein Anspruch ist es, Abläufe effizient zu gestalten
+          und Zusammenarbeit zielgerichtet zu unterstützen.
+        </p>
+      </div>
 
-    <!-- Laufbahn -->
-    <div class="card">
-      <h2 class="text-2xl font-semibold mb-4">
-        Berufliche Laufbahn
-      </h2>
-      <p>
-        Ich bewege mich sicher in strukturierten Arbeitsumgebungen
-        und übernehme Verantwortung für Organisation, Koordination
-        und nachhaltige Prozessverbesserung.
-      </p>
-      <p class="mt-4">
-        Mein Anspruch ist es, Abläufe effizient zu gestalten
-        und Zusammenarbeit zielgerichtet zu unterstützen.
-      </p>
+      <div class="card">
+        <h2 class="text-2xl font-semibold mb-4">
+          Professionelle Weiterentwicklung
+        </h2>
+        <p>
+          Ich entwickle meine Arbeitsweise kontinuierlich weiter,
+          mit Fokus auf Entscheidungsstärke, klare Priorisierung
+          und effiziente, ergebnisorientierte Methoden.
+        </p>
+      </div>
+
     </div>
-
-    <!-- Weiterentwicklung -->
-    <div class="card">
-      <h2 class="text-2xl font-semibold mb-4">
-        Professionelle Weiterentwicklung
-      </h2>
-      <p>
-        Ich entwickle meine Arbeitsweise kontinuierlich weiter,
-        mit Fokus auf Entscheidungsstärke, klare Priorisierung
-        und effiziente, ergebnisorientierte Methoden.
-      </p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
@@ -126,7 +163,7 @@
 </footer>
 
 <!-- ================= GLOBAL SCRIPT ================= -->
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js" defer></script>
 
 </body>
 </html>
