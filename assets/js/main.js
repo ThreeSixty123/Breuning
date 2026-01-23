@@ -1,9 +1,8 @@
-// ================= THEME =================
-const body = document.body;
+/* ===============================
+   DARK MODE (persistent)
+================================ */
 
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-}
+const body = document.body;
 
 function toggleTheme() {
   body.classList.toggle("dark");
@@ -13,67 +12,67 @@ function toggleTheme() {
   );
 }
 
+// Theme beim Laden setzen
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+}
+
+// Dark-Mode Buttons
 document.getElementById("darkToggle")?.addEventListener("click", toggleTheme);
 document.getElementById("darkToggleMobile")?.addEventListener("click", toggleTheme);
+document.getElementById("darkToggleMobileMenu")?.addEventListener("click", toggleTheme);
 
-// ================= MOBILE MENU =================
+
+/* ===============================
+   MOBILE BURGER MENU (FINAL)
+================================ */
+
 const menuToggle = document.getElementById("menuToggle");
-const menuClose = document.getElementById("menuClose");
+const menuClose  = document.getElementById("menuClose");
 const mobileMenu = document.getElementById("mobileMenu");
-const mobileOverlay = document.getElementById("mobileOverlay");
 
-function openMenu() {
-  mobileOverlay.classList.remove("hidden");
+function openMobileMenu() {
   mobileMenu.classList.remove("hidden");
   document.body.style.overflow = "hidden";
 }
 
-function closeMenu() {
-  mobileOverlay.classList.add("hidden");
+function closeMobileMenu() {
   mobileMenu.classList.add("hidden");
   document.body.style.overflow = "";
 }
 
-menuToggle?.addEventListener("click", openMenu);
-menuClose?.addEventListener("click", closeMenu);
-mobileOverlay?.addEventListener("click", closeMenu);
+menuToggle?.addEventListener("click", openMobileMenu);
+menuClose?.addEventListener("click", closeMobileMenu);
 
+// Schließen bei Klick auf einen Menüpunkt
 mobileMenu?.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", closeMenu);
+  link.addEventListener("click", closeMobileMenu);
 });
 
-document
-  .getElementById("darkToggleMobileMenu")
-  ?.addEventListener("click", toggleTheme);
 
+/* ===============================
+   FADE-IN ANIMATION
+================================ */
 
-// Dark Mode (beide Buttons)
-document
-  .getElementById("darkToggleMobileMenu")
-  ?.addEventListener("click", toggleTheme);
-
-
-// ================= FADE IN =================
 const faders = document.querySelectorAll(".fade-in");
 
-if (faders.length) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.2 });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
 
-  faders.forEach(el => observer.observe(el));
-}
+faders.forEach(el => observer.observe(el));
 
-// ================= ACTIVE NAV =================
+
+/* ===============================
+   ACTIVE NAVIGATION STATE
+================================ */
+
 const currentPage = location.pathname.split("/").pop() || "index.html";
+
 document.querySelectorAll(".nav a").forEach(link => {
   if (link.getAttribute("href") === currentPage) {
     link.classList.add("active");
-  }
-});
-
-
