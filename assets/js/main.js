@@ -1,51 +1,35 @@
-/* ===============================
-   DARK MODE (persistent)
-================================ */
+document.addEventListener("DOMContentLoaded", () => {
 
-const body = document.body;
-const toggleBtn = document.getElementById("darkToggle");
+  const body = document.body;
 
-/* Beim Laden: Theme wiederherstellen */
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-}
-
-/* Umschalten + speichern */
-toggleBtn?.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    body.classList.contains("dark") ? "dark" : "light"
-  );
-});
-
-
-/* ===============================
-   FADE-IN ANIMATION
-================================ */
-
-const faders = document.querySelectorAll(".fade-in");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
-
-faders.forEach(el => observer.observe(el));
-
-
-/* ===============================
-   ACTIVE NAVIGATION STATE
-================================ */
-
-const currentPage =
-  location.pathname.split("/").pop() || "index.html";
-
-document.querySelectorAll(".nav a").forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add("active");
+  /* Theme laden */
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
   }
+
+  function toggleTheme() {
+    body.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      body.classList.contains("dark") ? "dark" : "light"
+    );
+  }
+
+  document.getElementById("darkToggle")?.addEventListener("click", toggleTheme);
+  document.getElementById("darkToggleMobile")?.addEventListener("click", toggleTheme);
+
+  /* Mobile Menu */
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
 });
