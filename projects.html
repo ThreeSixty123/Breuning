@@ -15,123 +15,165 @@
 <body>
 
 <!-- ================= NAVIGATION ================= -->
-<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
     <span class="font-semibold tracking-wide">Richard Breuning</span>
 
-    <ul class="flex gap-8 items-center">
+    <!-- ================= DESKTOP NAV ================= -->
+    <ul class="hidden md:flex gap-8 items-center">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Über mich</a></li>
       <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="projects.html" class="active">Projekte</a></li>
       <li><a href="contact.html">Kontakt</a></li>
-      <li>
-        <button id="darkToggle" class="nav-button">Dark</button>
-      </li>
+      <li><button id="darkToggle" class="nav-button">Dark</button></li>
     </ul>
+
+    <!-- ================= MOBILE CONTROLS ================= -->
+    <div class="md:hidden flex items-center gap-3">
+      <button id="darkToggleMobile" class="p-2 text-lg">🌙</button>
+      <button id="menuToggle" class="p-2 text-xl">☰</button>
+    </div>
+
   </div>
 </nav>
 
-<!-- ================= HEADER ================= -->
-<section class="pt-40 pb-24 fade-in">
-  <div class="max-w-7xl mx-auto px-6">
+<!-- ================= MOBILE MENU (GLEICH WIE INDEX) ================= -->
+<div
+  id="mobileMenu"
+  class="hidden fixed inset-0 z-[9999]
+         bg-black text-white
+         px-6 pt-8">
 
-    <h1 class="text-4xl md:text-5xl font-semibold mb-6 heading">
-      <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      Projekte & Anwendungsfälle
-    </h1>
-
-    <p class="max-w-3xl text-lg">
-      Ausgewählte Projekte mit Fokus auf Technik, Struktur,
-      Automatisierung und praxisnahe Lösungen.
-    </p>
-
+  <!-- Close -->
+  <div class="flex justify-end mb-10">
+    <button id="menuClose" class="text-2xl text-white">✕</button>
   </div>
-</section>
 
-<!-- ================= PROJECTS GRID ================= -->
-<section class="pb-32 fade-in">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+  <!-- Navigation -->
+  <ul class="flex flex-col gap-6 text-xl font-medium">
+    <li><a href="index.html" class="text-white">Home</a></li>
+    <li><a href="about.html" class="text-white">Über mich</a></li>
+    <li><a href="skills.html" class="text-white">Skills</a></li>
+    <li><a href="projects.html" class="text-white">Projekte</a></li>
+    <li><a href="contact.html" class="text-white">Kontakt</a></li>
+  </ul>
 
-    <!-- Projekt 1: KI -->
-    <div class="card">
-      <img
-        src="assets/images/Eye.jpg"
-        alt="KI Kreative Anwendungen"
-        class="rounded-lg mb-4 w-full object-cover"
-      />
-      <h3 class="text-xl font-semibold mb-3">
-        KI / Kreative Anwendungen
-      </h3>
-      <p>
-        Einsatz moderner KI-Tools zur Ideenfindung,
-        Visualisierung und experimentellen Umsetzung
-        digitaler Konzepte.
+  <hr class="my-10 border-white/30">
+
+  <button
+    id="darkToggleMobileMenu"
+    class="flex items-center gap-3 text-lg text-white">
+    🌙 <span>Dark Mode</span>
+  </button>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main class="pt-32">
+
+  <!-- ================= HEADER ================= -->
+  <section class="pb-24 fade-in">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h1 class="text-4xl md:text-5xl font-semibold mb-6 heading">
+        <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        Projekte & Anwendungsfälle
+      </h1>
+
+      <p class="max-w-3xl text-lg">
+        Ausgewählte Projekte mit Fokus auf Technik, Struktur,
+        Automatisierung und praxisnahe Lösungen.
       </p>
-    </div>
 
-    <!-- Projekt 2: Fahrzeug -->
-    <div class="card">
-      <img
-        src="assets/images/Car.jpg"
-        alt="Fahrzeug Technik Projekt"
-        class="rounded-lg mb-4 w-full object-cover"
-      />
-      <h3 class="text-xl font-semibold mb-3">
-        Fahrzeug & Technik
-      </h3>
-      <p>
-        Pflege, Optimierung und technisches Verständnis
-        komplexer Systeme mit Fokus auf Funktion,
-        Ästhetik und Details.
-      </p>
     </div>
+  </section>
 
-    <!-- Projekt 3: Bike -->
-    <div class="card">
-      <img
-        src="assets/images/Bike.jpg"
-        alt="Mountainbike Projekt"
-        class="rounded-lg mb-4 w-full object-cover"
-      />
-      <h3 class="text-xl font-semibold mb-3">
-        Bike / Mountainbike
-      </h3>
-      <p>
-        Wartung, Optimierung und Einsatz moderner
-        Komponenten – mit Fokus auf Performance,
-        Kontrolle und Fahrgefühl.
-      </p>
+  <!-- ================= PROJECTS GRID ================= -->
+  <section class="pb-32 fade-in">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Projekt 1 -->
+      <div class="card">
+        <img
+          src="assets/images/Eye.jpg"
+          alt="KI Kreative Anwendungen"
+          class="rounded-lg mb-4 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold mb-3">
+          KI / Kreative Anwendungen
+        </h3>
+        <p>
+          Einsatz moderner KI-Tools zur Ideenfindung,
+          Visualisierung und experimentellen Umsetzung
+          digitaler Konzepte.
+        </p>
+      </div>
+
+      <!-- Projekt 2 -->
+      <div class="card">
+        <img
+          src="assets/images/Car.jpg"
+          alt="Fahrzeug Technik Projekt"
+          class="rounded-lg mb-4 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold mb-3">
+          Fahrzeug & Technik
+        </h3>
+        <p>
+          Pflege, Optimierung und technisches Verständnis
+          komplexer Systeme mit Fokus auf Funktion,
+          Ästhetik und Details.
+        </p>
+      </div>
+
+      <!-- Projekt 3 -->
+      <div class="card">
+        <img
+          src="assets/images/Bike.jpg"
+          alt="Mountainbike Projekt"
+          class="rounded-lg mb-4 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold mb-3">
+          Bike / Mountainbike
+        </h3>
+        <p>
+          Wartung, Optimierung und Einsatz moderner
+          Komponenten – mit Fokus auf Performance,
+          Kontrolle und Fahrgefühl.
+        </p>
+      </div>
+
+      <!-- Projekt 4 -->
+      <div class="card">
+        <img
+          src="assets/images/Smarthome.png"
+          alt="Smart Home Automationen"
+          class="rounded-lg mb-4 w-full object-cover"
+        />
+        <h3 class="text-xl font-semibold mb-3">
+          Smart Home / Automationen
+        </h3>
+        <p>
+          Konzeption und Umsetzung intelligenter
+          Automationslösungen zur Steuerung von
+          Licht, Energie, Sicherheit und Alltag.
+        </p>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Projekt 4: Smart Home -->
-    <div class="card">
-      <img
-        src="assets/images/Smarthome.png"
-        alt="Smart Home Automationen"
-        class="rounded-lg mb-4 w-full object-cover"
-      />
-      <h3 class="text-xl font-semibold mb-3">
-        Smart Home / Automationen
-      </h3>
-      <p>
-        Konzeption und Umsetzung intelligenter
-        Automationslösungen zur Steuerung von
-        Licht, Energie, Sicherheit und Alltag.
-      </p>
-    </div>
-
-  </div>
-</section>
+</main>
 
 <!-- ================= FOOTER ================= -->
 <footer class="text-center py-10">
   &copy; 2026 Richard Breuning
 </footer>
 
-<!-- ================= MAIN SCRIPT (AUSGELAGERT) ================= -->
+<!-- ================= GLOBAL SCRIPT ================= -->
 <script src="assets/js/main.js" defer></script>
 
 </body>
