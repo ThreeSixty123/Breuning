@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Richard Breuning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <span class="font-semibold">Richard Breuning</span>
+
+    <ul class="flex gap-8 items-center">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+      <li>
+        <button id="darkToggle" class="nav-button">Dark</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<main class="pt-32">
+
+  <!-- ================= CONTACT ================= -->
+  <section class="py-24 fade-in">
+    <div class="max-w-xl mx-auto px-6">
+
+      <h1 class="text-4xl font-semibold mb-10 heading">
+        <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        Kontakt aufnehmen
+      </h1>
+
+      <form
+        action="mailto:deine.email@domain.de"
+        method="POST"
+        enctype="text/plain"
+        class="space-y-6 card"
+      >
+
+        <div>
+          <label class="block mb-1">Name</label>
+          <input
+            type="text"
+            name="Name"
+            required
+            class="w-full p-3 border rounded"
+          >
+        </div>
+
+        <div>
+          <label class="block mb-1">E-Mail</label>
+          <input
+            type="email"
+            name="E-Mail"
+            required
+            class="w-full p-3 border rounded"
+          >
+        </div>
+
+        <div>
+          <label class="block mb-1">Nachricht</label>
+          <textarea
+            name="Nachricht"
+            rows="5"
+            required
+            class="w-full p-3 border rounded"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Nachricht senden
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center py-10">
+  &copy; 2026 Richard Breuning
+</footer>
+
+<!-- ================= MAIN SCRIPT (AUSGELAGERT) ================= -->
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

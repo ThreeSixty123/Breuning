@@ -1,0 +1,275 @@
+/* =====================================================
+   ELEGANT CORPORATE PORTFOLIO DESIGN
+   Freelancermap-inspired • Dark & Refined
+   ===================================================== */
+
+/* -------------------------
+   Base & Variables
+-------------------------- */
+
+html{
+  scroll-behavior:smooth;
+}
+
+:root{
+  /* LIGHT MODE */
+  --bg-main:#F7F7F6;
+  --bg-section:#ECEBE8;
+  --bg-card:#FFFFFF;
+
+  --text-main:#2C2C2C;
+  --text-muted:#6B6B6B;
+
+  --accent:#BFAE94;
+  --accent-hover:#A99982;
+
+  --border-soft:rgba(0,0,0,.06);
+
+  /* DARK MODE */
+  --bg-dark:#181818;
+  --bg-dark-alt:#212121;
+  --bg-dark-card:#1F1F1F;
+
+  --text-dark-main:#E2E2E2;
+  --text-dark-muted:#A8A8A8;
+
+  --border-dark:rgba(255,255,255,.06);
+}
+
+/* -------------------------
+   Body & Dark Mode
+-------------------------- */
+
+body{
+  background:var(--bg-main);
+  color:var(--text-main);
+  font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition:background .35s ease, color .35s ease;
+}
+
+body.dark{
+  background:var(--bg-dark);
+  color:var(--text-dark-main);
+}
+
+/* -------------------------
+   Typography (GLOBAL FIX)
+-------------------------- */
+
+h1,h2,h3{
+  font-weight:600;
+  letter-spacing:-0.015em;
+  color:var(--text-main);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3{
+  color:var(--text-dark-main);
+}
+
+p{
+  line-height:1.75;
+  color:var(--text-muted);
+}
+
+body.dark p{
+  color:var(--text-dark-muted);
+}
+
+/* 🔧 LISTEN – HIER WAR DER BUG */
+ul, li{
+  color:var(--text-main);
+}
+
+body.dark ul,
+body.dark li{
+  color:var(--text-dark-main);
+}
+
+/* -------------------------
+   Navigation
+-------------------------- */
+
+.nav{
+  border-bottom:1px solid var(--border-soft);
+}
+
+body.dark .nav{
+  border-bottom:1px solid var(--border-dark);
+}
+
+.nav a{
+  color:var(--text-main);
+  font-weight:500;
+  position:relative;
+  padding-bottom:4px;
+}
+
+body.dark .nav a{
+  color:var(--text-dark-main);
+}
+
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:1px;
+  background:var(--accent);
+  transition:width .3s ease;
+}
+
+.nav a:hover::after{
+  width:100%;
+}
+
+/* -------------------------
+   Buttons
+-------------------------- */
+
+.nav-button{
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:6px 18px;
+  border-radius:999px;
+  font-size:.9rem;
+  transition:.25s ease;
+}
+
+.nav-button:hover{
+  background:var(--accent);
+  color:#fff;
+}
+
+/* -------------------------
+   Hero Section
+-------------------------- */
+
+.hero-bg{
+  background:
+    linear-gradient(
+      rgba(247,247,246,.88),
+      rgba(236,235,232,.88)
+    ),
+    url("https://images.unsplash.com/photo-1603415526960-f4e1a3c0f49d?q=80&w=1600&auto=format")
+    center/cover no-repeat;
+}
+
+body.dark .hero-bg{
+  background:
+    linear-gradient(
+      rgba(24,24,24,.82),
+      rgba(33,33,33,.82)
+    ),
+    url("https://images.unsplash.com/photo-1603415526960-f4e1a3c0f49d?q=80&w=1600&auto=format")
+    center/cover no-repeat;
+}
+
+/* -------------------------
+   Cards / Content Blocks
+-------------------------- */
+
+.card{
+  background:var(--bg-card);
+  border-radius:18px;
+  padding:26px;
+  border:1px solid var(--border-soft);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+body.dark .card{
+  background:var(--bg-dark-card);
+  border:1px solid var(--border-dark);
+  box-shadow:0 8px 26px rgba(0,0,0,.55);
+}
+
+/* -------------------------
+   Images
+-------------------------- */
+
+img{
+  border-radius:16px;
+}
+
+/* -------------------------
+   Fade-In Animation
+-------------------------- */
+
+.fade-in{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1);
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:none;
+}
+
+/* -------------------------
+   Footer
+-------------------------- */
+
+footer{
+  color:var(--text-muted);
+  font-size:.9rem;
+}
+
+body.dark footer{
+  color:var(--text-dark-muted);
+}
+
+/* -------------------------
+   Heading Icons
+-------------------------- */
+
+.heading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.heading svg{
+  width:20px;
+  height:20px;
+  stroke:var(--accent);
+}
+
+/* -------------------------
+   Active Navigation
+-------------------------- */
+
+.nav a.active{
+  color:var(--accent);
+}
+
+.nav a.active::after{
+  width:100%;
+}
+/* -------------------------
+   Dark Section (Footer-like)
+-------------------------- */
+
+.dark-section{
+  background:var(--bg-dark);
+  color:var(--text-dark-main);
+}
+
+.dark-section p,
+.dark-section li{
+  color:var(--text-dark-muted);
+}
+
+.dark-section .card{
+  background:var(--bg-dark-card);
+  border:1px solid var(--border-dark);
+}

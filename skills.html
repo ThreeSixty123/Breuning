@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills – Richard Breuning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <span class="font-semibold">Richard Breuning</span>
+
+    <ul class="flex gap-8 items-center">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+      <li>
+        <button id="darkToggle" class="nav-button">Dark</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<main class="pt-32">
+
+  <!-- ================= INTRO ================= -->
+  <section class="py-24 fade-in">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h1 class="text-4xl font-semibold mb-12 heading">
+        <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        Kernkompetenzen
+      </h1>
+
+      <p class="max-w-3xl mb-16">
+        Um Projekte strukturiert aufzusetzen, ist eine klare Definition von
+        Zuständigkeiten, Abläufen und Rahmenbedingungen entscheidend.
+        Der Fokus liegt auf Transparenz, Effizienz und einer
+        lösungsorientierten Umsetzung.
+      </p>
+
+      <!-- ================= SKILLS GRID ================= -->
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3">
+            Stakeholder-Kommunikation
+          </h3>
+          <p>
+            Strukturierte Abstimmung, klare Erwartungsklärung
+            und lösungsorientierte Kommunikation auf Augenhöhe.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3">
+            Struktur & Koordination
+          </h3>
+          <p>
+            Planung, Priorisierung und Koordination komplexer Aufgaben
+            mit Fokus auf Effizienz, Klarheit und Verlässlichkeit.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3">
+            Analytisches Arbeiten
+          </h3>
+          <p>
+            Systematische Analyse von Anforderungen
+            und Ableitung pragmatischer, umsetzbarer Lösungen.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center py-10">
+  &copy; 2026 Richard Breuning
+</footer>
+
+<!-- ================= MAIN SCRIPT (AUSGELAGERT) ================= -->
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

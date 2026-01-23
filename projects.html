@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projekte – Richard Breuning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <span class="font-semibold tracking-wide">Richard Breuning</span>
+
+    <ul class="flex gap-8 items-center">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Über mich</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projekte</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+      <li>
+        <button id="darkToggle" class="nav-button">Dark</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<section class="pt-40 pb-24 fade-in">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h1 class="text-4xl md:text-5xl font-semibold mb-6 heading">
+      <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      Projekte & Anwendungsfälle
+    </h1>
+
+    <p class="max-w-3xl text-lg">
+      Ausgewählte Projekte mit Fokus auf Technik, Struktur,
+      Automatisierung und praxisnahe Lösungen.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= PROJECTS GRID ================= -->
+<section class="pb-32 fade-in">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Projekt 1: KI -->
+    <div class="card">
+      <img
+        src="assets/images/Eye.jpg"
+        alt="KI Kreative Anwendungen"
+        class="rounded-lg mb-4 w-full object-cover"
+      />
+      <h3 class="text-xl font-semibold mb-3">
+        KI / Kreative Anwendungen
+      </h3>
+      <p>
+        Einsatz moderner KI-Tools zur Ideenfindung,
+        Visualisierung und experimentellen Umsetzung
+        digitaler Konzepte.
+      </p>
+    </div>
+
+    <!-- Projekt 2: Fahrzeug -->
+    <div class="card">
+      <img
+        src="assets/images/Car.jpg"
+        alt="Fahrzeug Technik Projekt"
+        class="rounded-lg mb-4 w-full object-cover"
+      />
+      <h3 class="text-xl font-semibold mb-3">
+        Fahrzeug & Technik
+      </h3>
+      <p>
+        Pflege, Optimierung und technisches Verständnis
+        komplexer Systeme mit Fokus auf Funktion,
+        Ästhetik und Details.
+      </p>
+    </div>
+
+    <!-- Projekt 3: Bike -->
+    <div class="card">
+      <img
+        src="assets/images/Bike.jpg"
+        alt="Mountainbike Projekt"
+        class="rounded-lg mb-4 w-full object-cover"
+      />
+      <h3 class="text-xl font-semibold mb-3">
+        Bike / Mountainbike
+      </h3>
+      <p>
+        Wartung, Optimierung und Einsatz moderner
+        Komponenten – mit Fokus auf Performance,
+        Kontrolle und Fahrgefühl.
+      </p>
+    </div>
+
+    <!-- Projekt 4: Smart Home -->
+    <div class="card">
+      <img
+        src="assets/images/SmartHome.png"
+        alt="Smart Home Automationen"
+        class="rounded-lg mb-4 w-full object-cover"
+      />
+      <h3 class="text-xl font-semibold mb-3">
+        Smart Home / Automationen
+      </h3>
+      <p>
+        Konzeption und Umsetzung intelligenter
+        Automationslösungen zur Steuerung von
+        Licht, Energie, Sicherheit und Alltag.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center py-10">
+  &copy; 2026 Richard Breuning
+</footer>
+
+<!-- ================= MAIN SCRIPT (AUSGELAGERT) ================= -->
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
