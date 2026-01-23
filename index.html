@@ -43,33 +43,35 @@
 </nav>
 
 <!-- ================= MOBILE MENU (EINZIGES LAYER) ================= -->
+<!-- ================= MOBILE MENU (FINAL FIX) ================= -->
 <div
   id="mobileMenu"
   class="hidden fixed inset-0 z-[9999]
-         bg-[var(--bg-section)] text-[var(--text-main)]
-         dark:bg-[var(--bg-dark)] dark:text-white
+         bg-black text-white
          px-6 pt-8">
 
   <!-- Close -->
   <div class="flex justify-end mb-10">
-    <button id="menuClose" class="text-2xl">✕</button>
+    <button id="menuClose" class="text-2xl text-white">✕</button>
   </div>
 
   <!-- Navigation -->
-  <ul class="flex flex-col gap-6 text-xl">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">Über mich</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projekte</a></li>
-    <li><a href="contact.html">Kontakt</a></li>
+  <ul class="flex flex-col gap-6 text-xl font-medium">
+    <li><a href="index.html" class="text-white">Home</a></li>
+    <li><a href="about.html" class="text-white">Über mich</a></li>
+    <li><a href="skills.html" class="text-white">Skills</a></li>
+    <li><a href="projects.html" class="text-white">Projekte</a></li>
+    <li><a href="contact.html" class="text-white">Kontakt</a></li>
   </ul>
 
-  <hr class="my-10 border-black/20 dark:border-white/30">
+  <hr class="my-10 border-white/30">
 
-  <button id="darkToggleMobileMenu" class="flex items-center gap-3 text-lg">
+  <button id="darkToggleMobileMenu"
+          class="flex items-center gap-3 text-lg text-white">
     🌙 <span>Dark Mode</span>
   </button>
 </div>
+
 
 <!-- ================= MAIN ================= -->
 <main class="pt-32">
@@ -94,3 +96,4 @@
 
 </body>
 </html>
+
