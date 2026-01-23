@@ -15,84 +15,59 @@
 <body>
 
 <!-- ================= NAVIGATION ================= -->
-<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-50">
-
+<nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <!-- Logo -->
-    <span class="font-semibold tracking-wide">
-      Richard Breuning
-    </span>
+    <span class="font-semibold tracking-wide">Richard Breuning</span>
 
-    <!-- ================= DESKTOP NAV (UNVERÄNDERT) ================= -->
+    <!-- ================= DESKTOP NAV ================= -->
     <ul class="hidden md:flex gap-8 items-center">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Über mich</a></li>
       <li><a href="skills.html">Skills</a></li>
       <li><a href="projects.html">Projekte</a></li>
       <li><a href="contact.html" class="active">Kontakt</a></li>
-      <li>
-        <button id="darkToggle" class="nav-button">Dark</button>
-      </li>
+      <li><button id="darkToggle" class="nav-button">Dark</button></li>
     </ul>
 
     <!-- ================= MOBILE CONTROLS ================= -->
     <div class="md:hidden flex items-center gap-3">
-
-      <!-- Dark / Light Toggle -->
-      <button
-        id="darkToggleMobile"
-        aria-label="Dark Mode umschalten"
-        class="p-2 rounded-full border border-[var(--border-soft)] text-lg">
-        🌙
-      </button>
-
-      <!-- Burger -->
-      <button
-        id="menuToggle"
-        aria-label="Menü öffnen"
-        class="p-2 rounded-full border border-[var(--border-soft)] text-xl">
-        ☰
-      </button>
-
+      <button id="darkToggleMobile" class="p-2 text-lg">🌙</button>
+      <button id="menuToggle" class="p-2 text-xl">☰</button>
     </div>
 
   </div>
-
-  <!-- ================= MOBILE MENU (FULLSCREEN) ================= -->
-  <div
-    id="mobileMenu"
-    class="hidden md:hidden fixed inset-0 z-50
-           bg-white dark:bg-black px-6 pt-8">
-
-    <!-- Close -->
-    <div class="flex justify-end mb-10">
-      <button id="menuClose" aria-label="Menü schließen" class="text-2xl">
-        ✕
-      </button>
-    </div>
-
-    <!-- Navigation -->
-    <ul class="flex flex-col gap-6 text-lg">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Über mich</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projekte</a></li>
-      <li><a href="contact.html" class="active">Kontakt</a></li>
-    </ul>
-
-    <hr class="my-10 opacity-30">
-
-    <!-- Dark Mode Toggle im Menü -->
-    <button
-      id="darkToggleMobileMenu"
-      class="flex items-center gap-3 text-lg">
-      🌙 <span>Dark Mode</span>
-    </button>
-
-  </div>
-
 </nav>
+
+<!-- ================= MOBILE MENU (GLEICH WIE INDEX) ================= -->
+<div
+  id="mobileMenu"
+  class="hidden fixed inset-0 z-[9999]
+         bg-black text-white
+         px-6 pt-8">
+
+  <!-- Close -->
+  <div class="flex justify-end mb-10">
+    <button id="menuClose" class="text-2xl text-white">✕</button>
+  </div>
+
+  <!-- Navigation -->
+  <ul class="flex flex-col gap-6 text-xl font-medium">
+    <li><a href="index.html" class="text-white">Home</a></li>
+    <li><a href="about.html" class="text-white">Über mich</a></li>
+    <li><a href="skills.html" class="text-white">Skills</a></li>
+    <li><a href="projects.html" class="text-white">Projekte</a></li>
+    <li><a href="contact.html" class="text-white">Kontakt</a></li>
+  </ul>
+
+  <hr class="my-10 border-white/30">
+
+  <button
+    id="darkToggleMobileMenu"
+    class="flex items-center gap-3 text-lg text-white">
+    🌙 <span>Dark Mode</span>
+  </button>
+</div>
 
 <!-- ================= MAIN ================= -->
 <main class="pt-32">
@@ -161,7 +136,7 @@
   &copy; 2026 Richard Breuning
 </footer>
 
-<!-- ================= MAIN SCRIPT ================= -->
+<!-- ================= GLOBAL SCRIPT ================= -->
 <script src="assets/js/main.js" defer></script>
 
 </body>
