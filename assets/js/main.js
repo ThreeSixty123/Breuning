@@ -20,20 +20,32 @@ document.getElementById("darkToggleMobile")?.addEventListener("click", toggleThe
 const menuToggle = document.getElementById("menuToggle");
 const menuClose = document.getElementById("menuClose");
 const mobileMenu = document.getElementById("mobileMenu");
+const mobileOverlay = document.getElementById("mobileOverlay");
 
-menuToggle?.addEventListener("click", () => {
+function openMenu() {
+  mobileOverlay.classList.remove("hidden");
   mobileMenu.classList.remove("hidden");
-});
+  document.body.style.overflow = "hidden";
+}
 
-menuClose?.addEventListener("click", () => {
+function closeMenu() {
+  mobileOverlay.classList.add("hidden");
   mobileMenu.classList.add("hidden");
-});
+  document.body.style.overflow = "";
+}
+
+menuToggle?.addEventListener("click", openMenu);
+menuClose?.addEventListener("click", closeMenu);
+mobileOverlay?.addEventListener("click", closeMenu);
 
 mobileMenu?.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
-  });
+  link.addEventListener("click", closeMenu);
 });
+
+document
+  .getElementById("darkToggleMobileMenu")
+  ?.addEventListener("click", toggleTheme);
+
 
 // Dark Mode (beide Buttons)
 document
@@ -63,4 +75,5 @@ document.querySelectorAll(".nav a").forEach(link => {
     link.classList.add("active");
   }
 });
+
 
