@@ -32,11 +32,13 @@ const menuClose  = document.getElementById("menuClose");
 const mobileMenu = document.getElementById("mobileMenu");
 
 function openMobileMenu() {
+  if (!mobileMenu) return;
   mobileMenu.classList.remove("hidden");
   document.body.style.overflow = "hidden";
 }
 
 function closeMobileMenu() {
+  if (!mobileMenu) return;
   mobileMenu.classList.add("hidden");
   document.body.style.overflow = "";
 }
@@ -44,7 +46,7 @@ function closeMobileMenu() {
 menuToggle?.addEventListener("click", openMobileMenu);
 menuClose?.addEventListener("click", closeMobileMenu);
 
-// Schließen bei Klick auf einen Menüpunkt
+// Menü schließt bei Klick auf einen Link
 mobileMenu?.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", closeMobileMenu);
 });
@@ -56,13 +58,16 @@ mobileMenu?.querySelectorAll("a").forEach(link => {
 
 const faders = document.querySelectorAll(".fade-in");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
 faders.forEach(el => observer.observe(el));
 
