@@ -5,176 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projekte – Richard Breuning</title>
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
 <nav class="nav fixed top-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-
     <span class="font-semibold tracking-wide">Richard Breuning</span>
 
-    <!-- ================= DESKTOP NAV ================= -->
     <ul class="hidden md:flex gap-8 items-center">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Über mich</a></li>
-      <li><a href="skills.html">Skills</a></li>
+   <!--   <li><a href="skills.html">Skills</a></li> -->
       <li><a href="projects.html" class="active">Projekte</a></li>
       <li><a href="contact.html">Kontakt</a></li>
       <li><button id="darkToggle" class="nav-button">Dark</button></li>
     </ul>
 
-    <!-- ================= MOBILE CONTROLS ================= -->
     <div class="md:hidden flex items-center gap-3">
       <button id="darkToggleMobile" class="p-2 text-lg">🌙</button>
       <button id="menuToggle" class="p-2 text-xl">☰</button>
     </div>
-
   </div>
 </nav>
 
-<!-- ================= MOBILE MENU (GLEICH WIE INDEX) ================= -->
-<div
-  id="mobileMenu"
-  class="hidden fixed inset-0 z-[9999]
-         bg-black text-white
-         px-6 pt-8">
-
-  <!-- Close -->
-  <div class="flex justify-end mb-10">
-    <button id="menuClose" class="text-2xl text-white">✕</button>
-  </div>
-
-  <!-- Navigation -->
-  <ul class="flex flex-col gap-6 text-xl font-medium">
-    <li><a href="index.html" class="text-white">Home</a></li>
-    <li><a href="about.html" class="text-white">Über mich</a></li>
-    <li><a href="skills.html" class="text-white">Skills</a></li>
-    <li><a href="projects.html" class="text-white">Projekte</a></li>
-    <li><a href="contact.html" class="text-white">Kontakt</a></li>
-  </ul>
-
-  <hr class="my-10 border-white/30">
-
-  <button
-    id="darkToggleMobileMenu"
-    class="flex items-center gap-3 text-lg text-white">
-    🌙 <span>Dark Mode</span>
-  </button>
-</div>
-
-<!-- ================= MAIN ================= -->
 <main class="pt-32">
 
-  <!-- ================= HEADER ================= -->
-  <section class="pb-24 fade-in">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="pb-24 fade-in">
+  <div class="max-w-7xl mx-auto px-6">
+<h1 class="text-4xl md:text-5xl font-semibold mb-6 heading">
+  <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M12 5v14M5 12h14"/>
+  </svg>
+  Hobbys & Projekte
+</h1>
 
-      <h1 class="text-4xl md:text-5xl font-semibold mb-6 heading">
-        <svg fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M12 5v14M5 12h14"/>
-        </svg>
-        Projekte & Anwendungsfälle
-      </h1>
+<p class="max-w-3xl text-lg">
+  Hier bekommt ihr einen Überblick über meine Hobbies und Interessen –
+  von Technik und Automatisierung bis zu kreativen Experimenten mit KI.
+</p>
 
-      <p class="max-w-3xl text-lg">
-        Ausgewählte Projekte mit Fokus auf Technik, Struktur,
-        Automatisierung und praxisnahe Lösungen.
-      </p>
+  </div>
+</section>
 
+<section class="pb-32 fade-in">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+<!-- Projekt 1 -->
+<div class="card">
+  <div class="project-image">
+    <img class="bg-img" src="assets/images/Eye.jpg" alt="">
+    <img class="main-img" src="assets/images/Eye.jpg" alt="KI Kreative Anwendungen">
+  </div>
+  <h3 class="text-xl font-semibold mb-3">KI / Kreative Anwendungen</h3>
+  <p>Einsatz moderner KI-Tools zur Ideenfindung, Visualisierung und experimentellen Umsetzung digitaler Konzepte.</p>
+</div>
+
+<!-- Projekt 2 -->
+<div class="card">
+  <div class="project-image">
+    <img class="bg-img" src="assets/images/Car.jpg" alt="">
+    <img class="main-img" src="assets/images/Car.jpg" alt="Fahrzeug Technik Projekt">
+  </div>
+  <h3 class="text-xl font-semibold mb-3">Fahrzeug & Technik</h3>
+  <p>Pflege, Optimierung und technisches Verständnis komplexer Systeme mit Fokus auf Funktion, Ästhetik und Details.</p>
+</div>
+
+<!-- Projekt 3 -->
+<div class="card">
+  <div class="project-image">
+    <img class="bg-img" src="assets/images/Bike.jpg" alt="">
+    <img class="main-img" src="assets/images/Bike.jpg" alt="Mountainbike Projekt">
+  </div>
+  <h3 class="text-xl font-semibold mb-3">Bike / Mountainbike</h3>
+  <p>Wartung, Optimierung und Einsatz moderner Komponenten – mit Fokus auf Performance, Kontrolle und Fahrgefühl.</p>
+</div>
+
+<!-- Projekt 4 -->
+<div class="card">
+  <div class="project-image">
+    <img class="bg-img" src="assets/images/Smarthome.png" alt="">
+    <img class="main-img" src="assets/images/Smarthome.png" alt="Smart Home">
+  </div>
+  <h3 class="text-xl font-semibold mb-3">Smart Home / Automationen</h3>
+  <p>Konzeption und Umsetzung intelligenter Automationslösungen zur Steuerung von Licht, Energie, Sicherheit und Alltag.</p>
+</div>
+
+<!-- Projekt 5 (Music AI) -->
+<div class="card flex flex-col justify-between">
+  <div>
+    <div class="project-image">
+      <img class="bg-img" src="assets/images/meinweg.png" alt="">
+      <img class="main-img" src="assets/images/meinweg.png" alt="Song Mein Weg">
     </div>
-  </section>
 
-  <!-- ================= PROJECTS GRID ================= -->
-  <section class="pb-32 fade-in">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <h3 class="text-xl font-semibold mb-3">Music AI – Mein Weg</h3>
+    <p class="mb-6">
+      KI-generierter Song über persönliche Entwicklung und Fortschritt.
+    </p>
+  </div>
 
-      <!-- Projekt 1 -->
-      <div class="card">
-        <img
-          src="assets/images/Eye.jpg"
-          alt="KI Kreative Anwendungen"
-          class="rounded-lg mb-4 w-full object-cover"
-        />
-        <h3 class="text-xl font-semibold mb-3">
-          KI / Kreative Anwendungen
-        </h3>
-        <p>
-          Einsatz moderner KI-Tools zur Ideenfindung,
-          Visualisierung und experimentellen Umsetzung
-          digitaler Konzepte.
-        </p>
-      </div>
+  <a href="https://suno.com/s/eF6QSBkEHhg7H9FQ"
+     target="_blank"
+     class="song-button text-center">
+     ▶ Song anhören
+  </a>
+</div>
 
-      <!-- Projekt 2 -->
-      <div class="card">
-        <img
-          src="assets/images/Car.jpg"
-          alt="Fahrzeug Technik Projekt"
-          class="rounded-lg mb-4 w-full object-cover"
-        />
-        <h3 class="text-xl font-semibold mb-3">
-          Fahrzeug & Technik
-        </h3>
-        <p>
-          Pflege, Optimierung und technisches Verständnis
-          komplexer Systeme mit Fokus auf Funktion,
-          Ästhetik und Details.
-        </p>
-      </div>
 
-      <!-- Projekt 3 -->
-      <div class="card">
-        <img
-          src="assets/images/Bike.jpg"
-          alt="Mountainbike Projekt"
-          class="rounded-lg mb-4 w-full object-cover"
-        />
-        <h3 class="text-xl font-semibold mb-3">
-          Bike / Mountainbike
-        </h3>
-        <p>
-          Wartung, Optimierung und Einsatz moderner
-          Komponenten – mit Fokus auf Performance,
-          Kontrolle und Fahrgefühl.
-        </p>
-      </div>
-
-      <!-- Projekt 4 -->
-      <div class="card">
-        <img
-          src="assets/images/Smarthome.png"
-          alt="Smart Home Automationen"
-          class="rounded-lg mb-4 w-full object-cover"
-        />
-        <h3 class="text-xl font-semibold mb-3">
-          Smart Home / Automationen
-        </h3>
-        <p>
-          Konzeption und Umsetzung intelligenter
-          Automationslösungen zur Steuerung von
-          Licht, Energie, Sicherheit und Alltag.
-        </p>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="text-center py-10">
   &copy; 2026 Richard Breuning
 </footer>
 
-<!-- ================= GLOBAL SCRIPT ================= -->
 <script src="assets/js/main.js" defer></script>
-
 </body>
 </html>
