@@ -273,3 +273,50 @@ body.dark footer{
   background:var(--bg-dark-card);
   border:1px solid var(--border-dark);
 }
+
+/* =====================================================
+   SMART IMAGE FILL (Blur Background Trick)
+===================================================== */
+
+.project-image{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+
+/* verschwommener Hintergrund */
+.project-image .bg-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(28px) saturate(1.2);
+  transform:scale(1.2);
+  opacity:.55;
+}
+
+/* leichtes Overlay für edlen Look */
+.project-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.25);
+}
+
+body.dark .project-image::after{
+  background:rgba(0,0,0,.35);
+}
+
+/* echtes Bild vorne */
+.project-image .main-img{
+  position:relative;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:2;
+}
+
