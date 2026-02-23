@@ -164,6 +164,25 @@
 <!-- ================= FOOTER ================= -->
 <footer class="text-center py-10">
   &copy; 2026 Richard Breuning
+  <?php
+        $datei = "zaehler.txt";
+        
+        // Stand auslesen
+        $stand = (int)file_get_contents($datei);
+        
+        // Nur zählen, wenn es kein Refresh innerhalb der Session ist (optionaler Schutz)
+        session_start();
+        if (!isset($_SESSION['visited'])) {
+            $stand++;
+            file_put_contents($datei, $stand);
+            $_SESSION['visited'] = true;
+        }
+
+        // Anzeige formatieren
+        echo "<div class='visitor-counter'>";
+        echo "Bereits <strong>" . number_format($stand, 0, ',', '.') . "</strong> Besucher waren hier.";
+        echo "</div>";
+    ?>
 </footer>
 
 <!-- ================= GLOBAL SCRIPT ================= -->
@@ -171,3 +190,4 @@
 
 </body>
 </html>
+
